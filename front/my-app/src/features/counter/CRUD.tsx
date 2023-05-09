@@ -25,8 +25,9 @@ const CRUD = () => {
             dispatch(updAsync({ 
                 ...selectedProduct,
                 desc: desc,
-                price: price
+                price: price,
              }));
+            console.log("handleSubmit-Updated", selectedProduct);
             setUpdating(false);
         } else {
             dispatch(addAsync({ desc, price }));
@@ -54,6 +55,11 @@ const CRUD = () => {
                     price<input value={price} onChange={(e) => setprice(+e.target.value)} />
                 </div>
                 <button type="submit">{updating ? "Update Item" : "Add Item"}</button>
+                <button onClick={() => {
+                    setUpdating(false);
+                    setdesc("");
+                    setprice(0);
+                    setSelectedProduct({ id: undefined, desc: "", price: 0 }); }}>Cancel</button>
             </form>
             <button onClick={() => dispatch(getAllAsync())}>Get Items</button>
             

@@ -37,14 +37,7 @@ export const addAsync = createAsyncThunk(
         return response.data;
     }
 );
-// export const updAsync = createAsyncThunk(
-//     'CRUD/update',
-//     async (product: Product) => {
-//         console.log("update", product);
-//         const response = await updateProd(product);
-//         return response.data;
-//     }
-// );
+
 
 export const updAsync = createAsyncThunk(
     "CRUD/updateProd",

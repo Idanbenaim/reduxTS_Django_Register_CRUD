@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+Thank you for the clarification. Here's an updated version of the readme file based on your description:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+# React-Redux-Django Template
 
-## Available Scripts
+This project is a template for building a full-stack web application using React, Redux, and Django. The template includes functionality for user authentication and product CRUD operations. 
 
-In the project directory, you can run:
+## Project Structure
 
-### `npm start`
+The project consists of two folders: "back" for Django and "front" for React.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Back
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The "back" folder contains the Django code for the server-side of the application. 
 
-### `npm test`
+### Front
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The "front" folder contains the React code for the client-side of the application. 
 
-### `npm run build`
+#### app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The "app" folder contains hooks and store.ts file.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The "features" folder contains the code for user authentication and product CRUD operations. 
 
-### `npm run eject`
+##### Register
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The "Register" component allows users to register with a username and password. The registration data is sent to the backend and a token is saved to the session storage.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The "registerSlice.ts" file contains the reducer for handling user registration, and the "registerAPI.ts" file contains the API calls for sending registration data to the backend.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##### Login
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The "Login" component allows users to log in with a username and password. The login data is sent to the backend and a token is saved to the session storage.
 
-## Learn More
+The "loginSlice.ts" file contains the reducer for handling user login, and the "loginAPI.ts" file contains the API calls for sending login data to the backend.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### Product CRUD
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The "CRUD" component displays a list of products and allows users to add, update, and delete products. The product data is sent to the backend for CRUD operations.
+
+The "CRUDSlice.ts" file contains the reducer for handling product CRUD operations, and the "CRUDAPI.ts" file contains the API calls for sending product data to the backend.
+
+##### Models
+
+The "Models" folder contains the "Product.ts" file where the Product Class is defined.
+
+##### Counter
+
+The "Counter" component is a simple example of using Redux for a counter application.
+
+## How to Use
+
+1. Clone the repository
+2. Navigate to the "front" folder and run `npm install`
+3. Navigate to the "back" folder and create a virtual environment with `python -m venv venv`
+4. Activate the virtual environment with `source venv/bin/activate`
+5. Install the required packages with `pip install -r requirements.txt`
+6. Run the Django server with `python manage.py runserver`
+7. In another terminal window, navigate to the "front" folder and run `npm start`
+8. Open a web browser and navigate to http://localhost:3000/ to see the running application.
+
+## Contributing
+
+This app was built as a basic template of multiple components, authentication, and full CRUD.
+Contributions to this template are welcome. Please feel free to fork the repository and submit pull requests.
